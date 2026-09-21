@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Tree — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       No Deliverables tag row for this project — none were defined,
+       so only the Tools row appears below.
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: hero shot of finished tree with everything. This
+           same photo is reused again down in Final Outcome. Replace the
+           .placeholder div with
+           <img src="images/christmas-tree/hero.jpg" alt="Hero shot of finished tree with everything">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <img src="images/christmas-tree/hero-tree.jpg" alt="Hero shot of finished tree with everything">
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">Materials &amp; Manufacturing (Tufts) — Fall 2025 — Team Project (4 members)</p>
+        <h1>Materials &amp; Manufacturing Showcase — Holiday Tree</h1>
+        <p class="description">
+          A themed holiday tree and ornament collection, where each piece's
+          manufacturing process was deliberately chosen to match its
+          geometry and material needs.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Laser Cutting</span>
+          <span class="tag">Waterjet</span>
+          <span class="tag">Sheet Metal Bending</span>
+          <span class="tag">Sand Casting</span>
+          <span class="tag">Thermoforming</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       Text-only — no image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        For our Materials &amp; Manufacturing final project, our team of four
+        designed and built a holiday tree and set of ornaments, using the
+        project as an opportunity to explore manufacturing techniques
+        beyond what we'd done in scheduled lab periods. Each team member
+        took ownership of different pieces, applying a different process
+        to each: laser cutting, sheet metal bending, waterjet cutting,
+        thermoforming, and sand casting.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       Text-only — no image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        Rather than picking manufacturing techniques arbitrarily, our team
+        matched each part's geometry to the process best suited for it.
+        The snowman is symmetric about a central axis, making it a good
+        candidate for a two-part sand-cast mold split along that
+        centerline. The elephant needed to preserve fine surface detail
+        (ears, wrinkles, texture), so sand casting was again the right fit
+        for capturing that level of detail from a physical pattern. The
+        snowflakes and other flat decorations were laser-cut from clear
+        acrylic, taking advantage of the material's transparency and the
+        process's precision for flat, detailed shapes. The present box
+        and bow used sheet metal bending, letting us combine different
+        metal colors for contrast. The candy canes took advantage of
+        acrylic's behavior at its glass transition temperature, letting
+        us heat and twist strips into a shape no other process on this
+        list could easily produce. Thinking through material and process
+        fit this way, rather than defaulting to whatever we'd used most in
+        class, was the core design driver behind the whole project.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       My tree structure (no image), then the snowman (1 image), then
+       teammates' ornaments — each its own short paragraph, some with
+       images and some without — then the elephant (2 images).
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        I designed and manufactured the main tree structure: I traced the
+        tree outline in SolidWorks and built hooks directly into the
+        profile for hanging ornaments, made of two flat interlocking
+        acrylic pieces that form a freestanding cross-shaped base, plus a
+        base and top platform sized to hold an elephant tree-topper.
+      </p>
+
+      <p>
+        My more involved piece was the sand-cast pewter snowman. I
+        designed it in CAD with a hollow interior, 3D-printed the
+        pattern, and cast it using a steel core rod to form the internal
+        cavity and keep the final piece lighter.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/christmas-tree/steel-core-in-mold.jpg" alt="Steel core placed in the snowman mold">
+          <figcaption>Steel core placed in the snowman mold</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Our teammates contributed additional ornaments using their own
+        choice of process:
+      </p>
+
+      <p>
+        Laser-cut acrylic snowflakes and decorations (including our class
+        name and a wrench).
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/christmas-tree/laser-cutting-snowflake.jpg" alt="Laser-cutting the snowflake">
+          <figcaption>Laser-cutting the snowflake</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        A sheet-metal bent present box and bow.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/christmas-tree/sheet-metal-layout-lines.jpg" alt="Layout lines for sheet metal bending the present">
+          <figcaption>Layout lines for sheet metal bending the present</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        A waterjet-cut ornament with rotating parts that formed a 3D shape
+        when assembled — this one didn't turn out perfectly, but the
+        mechanism concept worked.
+      </p>
+
+      <p>
+        Acrylic candy canes, made by heating strips of red and white
+        acrylic past their glass transition temperature and twisting them
+        together.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/christmas-tree/candy-cane-test-twist.jpg" alt="Test twists to practice the technique">
+          <figcaption>Test twists to practice the technique</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/christmas-tree/candy-cane-twisting-action.jpg" alt="Twisting candy cane">
+          <figcaption>Twisting candy cane</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        I also sand-cast a Tufts Jumbo elephant, building a custom mold
+        box for it since existing shop boxes didn't have enough clearance
+        for the pattern.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/christmas-tree/custom-sand-casting-box.jpg" alt="Building the custom sand casting box">
+          <figcaption>Building the custom sand casting box</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/christmas-tree/elephant-casting-in-progress.jpg" alt="Elephant casting in progress">
+          <figcaption>Elephant casting in progress</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY CHALLENGES
+       Elephant paragraph (no image), then snowman paragraph (1 image).
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Key Challenges</h3>
+      <p>
+        The Jumbo elephant was cast from a squishy plush pattern, which
+        created its own problems: existing sand-casting boxes in the shop
+        didn't have enough clearance for the plush, so we built our own,
+        about 6 inches tall. The plush was also prone to compressing
+        rather than holding its shape while we packed sand around it, so
+        the side of the mold where sand was pressed directly against the
+        elephant captured good detail, but the opposite side, packed by
+        hammering sand down onto it, compressed the plush and lost detail
+        instead of imprinting it. That's why the back side of our final
+        casting is less detailed than the front. We also had to carefully
+        align the elephant along the mold's parting line, since we wanted
+        to preserve the plush and remove it intact rather than destroying
+        it to release the casting.
+      </p>
+      <p>
+        The snowman had its own casting challenge: a small burr left over
+        from cutting the steel core rod on the band saw caught inside the
+        casting after the pewter solidified, so the core wouldn't come
+        out even after twisting and rotating it. On a second attempt, we
+        chamfered the edge of the rod smooth before casting, then used a
+        heat gun aimed mostly at the steel rod itself. The idea was that
+        heat would conduct down through the rod to its embedded middle
+        section and locally melt just enough of the surrounding pewter to
+        release it cleanly, without heating the rest of the casting. We
+        also hadn't originally planned a way to hang the finished
+        snowman; after a few failed attempts, we got a tip to locally
+        melt the pewter with a soldering iron and insert a brass hook,
+        which worked well.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/christmas-tree/finished-snowman.jpg" alt="Finished snowman">
+          <figcaption>Finished snowman</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL OUTCOME
+       Reuses the same hero shot as the header image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Final Outcome</h3>
+      <p>
+        The final piece was a fully decorated, freestanding acrylic tree
+        showcasing six different manufacturing techniques across its
+        ornaments.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/christmas-tree/hero-tree.jpg" alt="Hero shot of tree with everything">
+          <figcaption>Hero shot of tree with everything</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">SolidWorks modeling</span>
+        <span class="tag">Laser cutting</span>
+        <span class="tag">Tolerancing &amp; fit</span>
+        <span class="tag">Sheet metal bending</span>
+        <span class="tag">Waterjet cutting</span>
+        <span class="tag">Thermoforming</span>
+        <span class="tag">Sand casting</span>
+        <span class="tag">Material/process selection</span>
+        <span class="tag">Creative problem-solving</span>
+        <span class="tag">Cross-functional teamwork</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>

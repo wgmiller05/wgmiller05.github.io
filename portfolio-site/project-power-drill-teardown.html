@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Drill Teardown — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: final CAD assembly or exploded view render.
+           Replace the .placeholder div with
+           <img src="images/power-drill-teardown/header.jpg" alt="Final CAD assembly / exploded view render">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <img src="images/power-drill-teardown/header-exploded-view-cad.png" alt="Exploded view CAD render">
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">Engineering Design (Tufts) — Spring 2026 — Team Project</p>
+        <h1>Cordless Hammer Drill Teardown &amp; Reverse-Engineered Assembly</h1>
+        <p class="description">
+          A full disassembly, CAD reconstruction, and documentation of a 20V cordless
+          hammer drill, covering the shell, battery housing, controls, geartrain,
+          motor, chuck, and impact mechanism.
+        </p>
+
+        <div class="tag-row" style="margin-bottom:8px;">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Deliverables</span>
+          <span class="tag">Full Assembly Model</span>
+          <span class="tag">Bill of Materials</span>
+          <span class="tag">Exploded View</span>
+          <span class="tag">Function Structure Diagram</span>
+          <span class="tag">Video Walkthrough</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       Two images: cordless hammer drill, first step of disassembling.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        For this team project, we tore down a DCA 20V cordless hammer drill and
+        reconstructed the full assembly in CAD, including a bill of materials and
+        exploded view. As a team, we disassembled the drill together and did
+        background research on how it worked, then split up the remaining
+        components to model individually.
+      </p>
+
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/cordless-hammer-drill.jpg" alt="Cordless hammer drill">
+          <figcaption>Cordless hammer drill</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/first-step-disassembling.jpg" alt="First step of disassembling">
+          <figcaption>First step of disassembling</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       Three images: physical exploded view, shell model, function
+       structure diagram.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        As a team, we disassembled the drill piece by piece, reasoning through each
+        part's function as we removed it — for example, thinking through what a part
+        must be doing based on what stopped working once it came out. This got
+        harder once we removed the case and battery, since at that point the drill
+        could no longer run, so understanding how the remaining parts interacted
+        became more of a thought experiment than something we could test directly.
+        We also mapped out a function structure diagram, tracing how energy and
+        information flowed through the drill from trigger input to rotational
+        output. Once we had a working understanding of the system, we split up the
+        remaining CAD modeling: I modeled the outer shell, the battery housing, the
+        electronics and controls (gear selector, direction switch, trigger), and the
+        planetary gear train.
+      </p>
+
+      <div class="media-grid media-grid--large">
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/physical-exploded-view.jpg" alt="Physical exploded view">
+          <figcaption>Physical exploded view</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/shell-model.png" alt="Shell model">
+          <figcaption>Shell model</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/function-structure-diagram.png" alt="Function structure diagram">
+          <figcaption>Function structure diagram</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       Two paragraphs, each with its own image pair.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        Rather than each person building an isolated subassembly, I took on
+        assembling the entire drill myself, importing CAD models that teammates had
+        built for the motor, chuck, and impact mechanism into my own shell,
+        controls, and gear train models. This meant working with parts I hadn't
+        designed myself — in a few cases, proportions on imported components (like
+        the motor rotor and housing) didn't quite line up with how they needed to
+        fit into the shell, so I had to edit and adjust models I hadn't originally
+        built. That process taught me how to read and interpret someone else's
+        modeling choices and feature structure.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/motor-assembly.png" alt="Motor assembly">
+          <figcaption>Motor assembly</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/chuck-assembly.png" alt="Chuck assembly">
+          <figcaption>Chuck assembly</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Since the drill used relatively few screws, figuring out which parts were
+        meant to press directly against each other, rather than being fastened,
+        also required some guesswork when setting up mates, based on the geometry
+        and how the parts had fit together during teardown.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/electronics-fitment.png" alt="Electronics fitment">
+          <figcaption>Electronics fitment</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/drivetrain-fitment.png" alt="Drivetrain fitment">
+          <figcaption>Drivetrain fitment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL OUTCOME
+       Two images, plus a video walkthrough. No separate Key
+       Challenges section for this project — that's expected.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Final Outcome</h3>
+      <p>
+        The completed deliverables included a full assembly model, bill of
+        materials, exploded view, function structure diagram, and a final video
+        walkthrough of the disassembled and reconstructed drill.
+      </p>
+
+      <div class="media-grid media-grid--large">
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/final-assembly-render.png" alt="Final assembly render">
+          <figcaption>Final assembly render</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/power-drill-teardown/exploded-view-cad.png" alt="Exploded view">
+          <figcaption>Exploded view</figcaption>
+        </figure>
+
+        <figure class="media-block media-block--small video-block">
+          <video controls src="images/power-drill-teardown/walkthrough.mp4"></video>
+          <figcaption>Final walkthrough</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">Reverse engineering</span>
+        <span class="tag">Functional decomposition</span>
+        <span class="tag">Precision measurement</span>
+        <span class="tag">Assembly integration</span>
+        <span class="tag">Interpreting and editing others' CAD models</span>
+        <span class="tag">Mechanical systems (gear trains, controls)</span>
+        <span class="tag">BOM &amp; exploded view documentation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>

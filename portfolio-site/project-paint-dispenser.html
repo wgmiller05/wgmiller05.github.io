@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint Dispenser — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: final product hero shot. Replace the .placeholder
+           div with <img src="images/paint-dispenser/header.jpg" alt="Final product hero shot">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <img src="images/paint-dispenser/header-final-product.jpg" alt="Final product hero shot">
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">Engineering Design II (Tufts) — Spring 2026 — Team Project</p>
+        <h1>Assistive Paint Dispenser</h1>
+        <p class="description">
+          An assistive device designed with and for an individual with cerebral
+          palsy, helping her dispense her own paint colors independently.
+        </p>
+
+        <div class="tag-row" style="margin-bottom:8px;">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Waterjet</span>
+          <span class="tag">Milling</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">Vacuum Forming</span>
+          <span class="tag">Manual Bending</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Deliverables</span>
+          <span class="tag">Low-Fidelity Prototype</span>
+          <span class="tag">Final Prototype</span>
+          <span class="tag">Demonstration Video</span>
+          <span class="tag">Design Poster</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       Text-only — no image for this section.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        Our client, an individual with cerebral palsy, loves painting but has always
+        needed help from her art teacher or mother to open paint tubes and squeeze
+        out the right amount of color. We wanted to give her the ability to select
+        and dispense her own paints independently, so she could paint on her own
+        terms. Working within a $60 budget, our team followed a full user-centered
+        design process, from initial observation through a final device delivered
+        directly to her.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       No image yet — optional, can add a task-analysis/market-research
+       visual later if it turns up. Just delete this comment and add a
+       .media-grid (see other sections for the pattern) when you do.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        We started with task analysis and market research, looking at existing
+        assistive and industrial dispensing products across other fields before
+        defining our own user needs and engineering requirements. Early in
+        ideation, we joked about using a hydraulic press, clearly overkill for a
+        paint tube, but the joke pointed at something real: more mechanical
+        advantage would make it much easier to squeeze paint out with minimal hand
+        force. That became one of our three initial concepts, and the one we
+        favored from early on, though we still developed and pitched all three to
+        our client before committing to it. We built out full pitches for each —
+        sketches, drawings, and a short pitch video — and after her feedback, moved
+        forward with the lever-and-press design, developing custom dies shaped
+        specifically to squeeze paint out of the tube efficiently.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       Five paragraphs, each with its own image group.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        Our low-fidelity prototype was laser-cut acrylic, taped together, to test
+        the overall sizing and fit with the paint tubes before committing to final
+        materials.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/low-fidelity-prototype.jpg" alt="Low-fidelity prototype">
+          <figcaption>Low-fidelity prototype</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        For the final version, we moved to aluminum for durability, stability, and
+        portability. Parts were cut on a waterjet, with additional milling and
+        drilling for assembly.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/waterjet-software-setup.jpg" alt="Waterjet software/setup">
+          <figcaption>Waterjet software/setup</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/paint-dispenser/waterjet-cutting.jpg" alt="Waterjet cutting">
+          <figcaption>Waterjet cutting</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/paint-dispenser/finished-waterjet-parts.jpg" alt="Finished waterjet parts">
+          <figcaption>Finished waterjet parts</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/paint-dispenser/milling.jpg" alt="Milling">
+          <figcaption>Milling</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        One early open question was how to hinge the mechanism at all — a standard
+        hinge wouldn't work because the paint tube itself has thickness, so there
+        needed to be a gap between the two plates even when closed. We solved this
+        by mounting the hinge on a raised block, creating consistent spacing
+        regardless of position. L-brackets were bent by hand on a manual bender to
+        complete the frame.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/lbracket-bending.jpg" alt="L-bracket bending">
+          <figcaption>L-bracket bending</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        We also 3D-printed custom dies to keep the tube properly seated. I designed
+        these myself, including a countersunk feature to help guide and center the
+        tube, and had to quickly shorten the top die after our first version turned
+        out too long.
+      </p>
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/printed-die.jpg" alt="3D-printed die">
+          <figcaption>3D-printed die</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        To make the paint trays easy to read at a glance, we made them from clear
+        plastic, testing different thicknesses to balance rigidity against
+        flexibility. As a final touch, we vacuum-formed a Disney-themed imprint
+        into the trays, since our client is a Disney fan.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/vacuum-forming-die.jpg" alt="Vacuum forming die">
+          <figcaption>Vacuum forming die</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/paint-dispenser/vacuum-forming-process.jpg" alt="Vacuum forming process">
+          <figcaption>Vacuum forming process</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY CHALLENGES
+       Two paragraphs, no image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Key Challenges</h3>
+      <p>
+        Not everything got fully resolved. The hinge had very little resistance on
+        its own, so it could slam shut unexpectedly, and opening it fully to reduce
+        that risk pushed the handle out of comfortable reach from a seated position
+        — a real tradeoff we didn't have time to fully solve. Adding some
+        adjustable resistance so the hinge could hold at any position would be a
+        clear next step.
+      </p>
+      <p>
+        We also tried off-the-shelf silicone toothpaste caps to keep the tube
+        opening from drying out between uses, but they didn't seal well enough.
+        Instead, we relied on the lever's mechanical advantage to push out any
+        dried paint at the tip, and noted in the instructions that a caregiver
+        should help open and close the cap at the start and end of each session.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL OUTCOME
+       Final product photo plus a demonstration video embed.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Final Outcome</h3>
+      <p>
+        We delivered the final device along with written instructions and a video
+        demonstration. Our client attended the final poster presentation over Zoom
+        and seemed happy with the result, though we don't have confirmation of how
+        it performed for her in ongoing use.
+      </p>
+
+      <div class="media-grid media-grid--large">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/final-product-outcome.jpg" alt="Final product">
+          <figcaption>Final product</figcaption>
+        </figure>
+
+        <figure class="media-block">
+          <video controls src="images/paint-dispenser/demonstration.mp4"></video>
+          <figcaption>Demonstration video</figcaption>
+        </figure>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">User-centered design</span>
+        <span class="tag">Task analysis &amp; market research</span>
+        <span class="tag">Ideation &amp; concept down-selection</span>
+        <span class="tag">Engineering requirements development</span>
+        <span class="tag">Waterjet cutting</span>
+        <span class="tag">Manual milling work</span>
+        <span class="tag">3D printing</span>
+        <span class="tag">Vacuum forming</span>
+        <span class="tag">Manual bending</span>
+        <span class="tag">Aluminum fabrication</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT POSTER
+       Extra section at the end, specific to this project.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Poster</h3>
+      <p>
+        Presented at the Tufts Engineering Design II final showcase.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/paint-dispenser/project-poster.jpg" alt="Project poster (names cropped/blurred)">
+          <figcaption>Project poster</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>

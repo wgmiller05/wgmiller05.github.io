@@ -1,0 +1,803 @@
+
+  /* ============================================================
+     DESIGN TOKENS
+     Change colors/fonts/spacing here and they update site-wide.
+     ============================================================ */
+  :root{
+    --paper:      #F6F5F1;   /* page background — warm off-white, like drafting paper */
+    --card:       #FFFFFF;   /* card / panel background */
+    --ink:        #1B1D1F;   /* primary text */
+    --slate:      #5B6169;   /* secondary text (captions, meta) */
+    --blueprint:  #34546E;   /* single accent color — steel/blueprint blue */
+    --blueprint-dim: #A9BAC7;/* blueprint blue, lightened, for hairlines */
+    --rule:       #DCD9D0;   /* hairline border color */
+
+    --font-head:  'Archivo', sans-serif;
+    --font-body:  'Source Serif 4', serif;
+    --font-mono:  'IBM Plex Mono', monospace;
+
+    --max-width:  1080px;
+    --gutter:     clamp(20px, 5vw, 48px);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* Respect users who've asked for reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior: auto !important; transition: none !important; }
+  }
+
+  /* ============================================================
+     NAV BAR
+     Appears on every page. Update the links here if you add
+     an About page link later.
+     ============================================================ */
+  header.site-nav{
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .site-nav .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .site-nav .name{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+
+  .site-nav nav{
+    display: flex;
+    gap: clamp(18px, 3vw, 36px);
+  }
+
+  .site-nav nav a{
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--slate);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .site-nav nav a:hover,
+  .site-nav nav a.active{
+    color: var(--ink);
+    border-bottom-color: var(--blueprint);
+  }
+
+  /* ============================================================
+     HERO
+     Headshot sits in a bordered "spec box" with drafting-style
+     corner marks — a nod to a title block on an engineering
+     drawing. Intro text sits below the name/headline, per brief.
+     ============================================================ */
+  .hero{
+    padding: clamp(48px, 8vw, 88px) 0 clamp(40px, 6vw, 72px);
+  }
+
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(28px, 5vw, 56px);
+    align-items: start;
+  }
+
+  /* Headshot placeholder box — swap the <img> in for a real photo later.
+     See the HTML comment above .headshot-box for exactly what to replace. */
+  .headshot-box{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+  }
+
+  .headshot-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .headshot-placeholder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--slate);
+  }
+
+  .headshot-placeholder svg{ width: 56px; height: 56px; opacity: 0.5; }
+
+  .headshot-placeholder span{
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Corner tick marks — drafting registration marks. Used once, on the
+     headshot box, so it stays a memorable detail rather than clutter. */
+  .headshot-box::before,
+  .headshot-box::after,
+  .headshot-box .tick-tr,
+  .headshot-box .tick-bl{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+  }
+  .headshot-box::before{ /* top-left */
+    top: -1px; left: -1px;
+    border-top: 2px solid var(--blueprint);
+    border-left: 2px solid var(--blueprint);
+  }
+  .headshot-box::after{ /* bottom-right */
+    bottom: -1px; right: -1px;
+    border-bottom: 2px solid var(--blueprint);
+    border-right: 2px solid var(--blueprint);
+  }
+
+  .hero-text .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--blueprint);
+    margin: 0 0 6px;
+  }
+
+  .hero-text h1{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 4px;
+  }
+
+  .hero-text h2{
+    font-family: var(--font-head);
+    font-weight: 500;
+    font-size: clamp(1.1rem, 2.4vw, 1.3rem);
+    color: var(--slate);
+    margin: 0 0 22px;
+  }
+
+  .hero-text p{
+    max-width: 62ch;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+
+  /* ============================================================
+     FEATURED PROJECTS
+     ============================================================ */
+  .section{
+    padding: clamp(32px, 6vw, 56px) 0;
+  }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+  }
+
+  .section-head h3{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .section-head .count{
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  /* Card grid — same grid/card markup is reused on the All Projects
+     page later; just repeat the .card block for each project. */
+  .card-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .card{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Corner marks repeated on cards, echoing the headshot box */
+  .card::before, .card::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+  }
+  .card::before{ top: -1px; left: -1px; border-top: 2px solid var(--blueprint-dim); border-left: 2px solid var(--blueprint-dim); }
+  .card::after{ bottom: -1px; right: -1px; border-bottom: 2px solid var(--blueprint-dim); border-right: 2px solid var(--blueprint-dim); }
+
+  .card:hover::before, .card:hover::after{
+    border-color: var(--blueprint);
+  }
+
+  .card-image{
+    aspect-ratio: 4 / 3;
+    background: #EFEDE7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+
+  .card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-image span{
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--slate);
+  }
+
+  .card-body{
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .card-body h4{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .card-body p{
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Tag rows — "Tools" and "Deliverables". Rendered as outlined
+     monospace chips, like a materials/spec callout. Sentence-case
+     labels (not caps) so they read as content, not template chrome. */
+  .tag-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: baseline;
+  }
+
+  .tag-row .tag-label{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--slate);
+    margin-right: 2px;
+    white-space: nowrap;
+  }
+
+  .tag{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--blueprint);
+    background: rgba(52, 84, 110, 0.06);
+    border: 1px solid var(--blueprint-dim);
+    padding: 3px 8px;
+    line-height: 1.6;
+  }
+
+  .view-all-wrap{
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .btn{
+    display: inline-block;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 12px 28px;
+  }
+
+  .btn:hover{
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* "Coming soon" badge — for cards on the All Projects page that don't
+     have a built page to link to yet (see .card.card--pending below). */
+  .card--pending{
+    cursor: default;
+  }
+
+  .card--pending .card-image{
+    opacity: 0.6;
+  }
+
+  .coming-soon-badge{
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--slate);
+    border: 1px solid var(--rule);
+    padding: 2px 8px;
+    margin-bottom: 4px;
+  }
+
+  /* ============================================================
+     FOOTER
+     Appears on every page. Update email / LinkedIn URL here.
+     ============================================================ */
+  footer.site-footer{
+    border-top: 1px solid var(--rule);
+    margin-top: 24px;
+  }
+
+  footer.site-footer .wrap{
+    padding: 26px var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer.site-footer a{
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--slate);
+    text-decoration: none;
+  }
+
+  footer.site-footer a:hover{ color: var(--blueprint); }
+
+  footer.site-footer .footer-links{
+    display: flex;
+    gap: 22px;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 860px){
+    .card-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .headshot-box{ width: 160px; height: 160px; }
+    .card-grid{ grid-template-columns: 1fr; }
+    .site-nav .wrap{ flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+
+  /* Visible keyboard focus for accessibility */
+  a:focus-visible, .btn:focus-visible{
+    outline: 2px solid var(--blueprint);
+    outline-offset: 2px;
+  }
+
+  /* ============================================================
+     PROJECT PAGE — HEADER BLOCK
+     Title, context line, description, a side-box image, and the
+     tools/deliverables tags. This block's layout stays identical
+     across every project; only the text and image change.
+     ============================================================ */
+  .project-header{
+    padding: clamp(48px, 8vw, 88px) 0 clamp(40px, 6vw, 72px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Same column pattern as the homepage hero (.hero-grid): a fixed-width
+     image on the left, flexible text on the right. Put the .side-box
+     element FIRST in the HTML so the order matches the hero exactly. */
+  .project-header-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(28px, 5vw, 56px);
+    align-items: flex-start;
+  }
+
+  .project-header-grid .side-box{
+    flex: 0 0 300px;
+    width: 300px;
+    height: 300px;
+    aspect-ratio: auto; /* fixed height below, matching the headshot box exactly */
+  }
+
+  .project-header-grid .header-text{
+    flex: 1 1 360px;
+    min-width: 280px;
+  }
+
+  .project-header .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--blueprint);
+    margin: 0 0 10px;
+  }
+
+  .project-header h1{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+    line-height: 1.2;
+    margin: 0 0 14px;
+  }
+
+  .project-header .description{
+    font-size: 1.05rem;
+    max-width: 62ch;
+    margin: 0 0 22px;
+  }
+
+  /* Side-box image — same corner-mark treatment as the homepage
+     headshot box, so the drafting motif carries across pages. */
+  .side-box{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--card);
+    border: 1px solid var(--rule);
+  }
+
+  .side-box::before, .side-box::after{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+  }
+  .side-box::before{ top: -1px; left: -1px; border-top: 2px solid var(--blueprint); border-left: 2px solid var(--blueprint); }
+  .side-box::after{ bottom: -1px; right: -1px; border-bottom: 2px solid var(--blueprint); border-right: 2px solid var(--blueprint); }
+
+  .side-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .side-box .placeholder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--slate);
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* ============================================================
+     PROJECT PAGE — BODY SECTIONS
+     One .project-section per header (Project Overview, Engineering
+     Approach, Design Iteration, Key Challenges, Final Outcome).
+     Delete a whole .project-section block for projects that omit
+     that section (e.g. no separate Final Outcome).
+     ============================================================ */
+  .project-section{
+    padding: clamp(32px, 5vw, 48px) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project-section:last-of-type{
+    border-bottom: none;
+  }
+
+  .project-section h3{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 18px;
+  }
+
+  .project-section p{
+    max-width: 72ch;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin: 0 0 16px;
+  }
+
+  .project-section p:last-child{
+    margin-bottom: 0;
+  }
+
+  /* Image block — repeat this element as many times as a section
+     needs. Works for 1 image or several; each one is independent,
+     so uneven media counts between sections are expected. */
+  .media-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 22px 0;
+    align-items: start; /* don't stretch shorter figures to match taller neighbors */
+  }
+
+  .media-block{
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--rule);
+  }
+
+  .media-block::before, .media-block::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+  }
+  .media-block::before{ top: -1px; left: -1px; border-top: 2px solid var(--blueprint-dim); border-left: 2px solid var(--blueprint-dim); }
+  .media-block::after{ bottom: -1px; right: -1px; border-bottom: 2px solid var(--blueprint-dim); border-right: 2px solid var(--blueprint-dim); }
+
+  .media-block img,
+  .media-block video{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .media-block .placeholder{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--slate);
+  }
+
+  .media-block figcaption{
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--slate);
+    padding: 8px 10px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* SIZE MODIFIER: add class="media-block media-block--small" to any
+     figure to shrink just that one image instead of letting it fill
+     its grid column. Useful for a closing/detail shot that doesn't
+     need to be as prominent as the others in its row. */
+  .media-block--small{
+    max-width: 260px;
+    justify-self: start;
+  }
+
+  /* MEDIUM: a middle ground between --small and full width — useful for
+     a single image in its own row that shouldn't stretch edge to edge
+     but also shouldn't be as tiny as --small. */
+  .media-block--medium{
+    max-width: 640px;
+    justify-self: start;
+  }
+
+  /* GRID SIZE MODIFIERS: add to the .media-grid wrapper itself (not
+     the individual figures) to change how large every image in that
+     group appears. --compact fits more, smaller images per row;
+     --large fits fewer, bigger images per row (often wrapping a
+     3-image group into 2 rows instead of 1). */
+  .media-grid--compact{
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+  }
+
+  .media-grid--large{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  /* SINGLE: for a lone image that should match the size of one tile in
+     a multi-image sequence (like the 4-across waterjet group) rather
+     than stretching full-width with empty space beside it. Shrinks the
+     whole row down to one tile's width instead of resizing the image
+     inside a full-width row. */
+  .media-grid--single{
+    max-width: 380px;
+  }
+
+  /* Video block — same visual treatment as a media-block, but sized
+     wider by default since video usually reads better large.
+     Use for demo videos / walkthroughs. Swap the <video> src, or
+     replace with an <iframe> for a YouTube/Vimeo embed. */
+  .video-block{
+    grid-column: 1 / -1;
+  }
+
+  .video-block.media-block--small{
+    grid-column: auto; /* small modifier wins: don't force full width */
+  }
+
+  .video-block video,
+  .video-block iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+  }
+
+  /* Skills Demonstrated — short phrase list, rendered as the same
+     outlined monospace tag used elsewhere on the site, so it reads
+     as consistent with the Tools/Deliverables tags on cards. */
+  .skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ============================================================
+     PROJECT PAGE — RESPONSIVE
+     ============================================================ */
+  @media (max-width: 720px){
+    .project-header-grid .side-box{
+      width: 160px;
+      height: 160px;
+      flex-basis: 160px;
+    }
+  }
+
+  /* ============================================================
+     LIGHTBOX (click-to-enlarge)
+     Works site-wide on the headshot, header/side-box image, and
+     any photo inside a .media-block. Behavior lives in site.js —
+     this just styles the full-screen overlay it creates.
+     ============================================================ */
+  .lightbox-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 18, 19, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease;
+    z-index: 1000;
+  }
+
+  .lightbox-overlay.active{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-overlay img{
+    max-width: 92vw;
+    max-height: 92vh;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox-overlay .lightbox-close{
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #fff;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  .lightbox-overlay .lightbox-close:hover{
+    border-color: #fff;
+  }
+
+  /* Any image the lightbox can open shows a zoom cursor as a hint */
+  .side-box img,
+  .headshot-box img,
+  .media-block img{
+    cursor: zoom-in;
+  }
+
+  /* ============================================================
+     PAGE HEADER
+     A simple title block for pages that are just "a heading and
+     content" — Resume, All Projects, About. Same spacing as the
+     homepage hero and project header, so the top of every page
+     feels consistent site-wide.
+     ============================================================ */
+  .page-header{
+    padding: clamp(48px, 8vw, 88px) 0 clamp(28px, 4vw, 40px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .page-header h1{
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    margin: 0 0 10px;
+  }
+
+  .page-header p{
+    max-width: 62ch;
+    font-size: 1.05rem;
+    color: var(--slate);
+    margin: 0;
+  }
+
+  /* ============================================================
+     RESUME PAGE
+     ============================================================ */
+  .resume-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0 0 32px;
+  }
+
+  .resume-viewer{
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
+    background: var(--card);
+    border: 1px solid var(--rule);
+  }
+
+  .resume-viewer iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .resume-fallback{
+    padding: 40px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--slate);
+  }
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Grinder — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: final rendered assembly or exploded view. Replace
+           the .placeholder div with
+           <img src="images/coffee-grinder/header.jpg" alt="Final rendered assembly / exploded view">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <img src="images/coffee-grinder/header-full-assembly.jpg" alt="Final rendered assembly">
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">CAD Design Course (Tufts) — Spring 2026 — Individual Project</p>
+        <h1>Manual Coffee Grinder — Reverse-Engineered Assembly</h1>
+        <p class="description">
+          A full reverse-engineered CAD model and assembly of a manual coffee
+          grinder, built entirely from physical measurements rather than
+          existing drawings.
+        </p>
+
+        <div class="tag-row" style="margin-bottom:8px;">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Deliverables</span>
+          <span class="tag">Full CAD Assembly</span>
+          <span class="tag">Assembly Drawing</span>
+          <span class="tag">Part Drawings</span>
+          <span class="tag">Animation</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       Text-only — no image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        For this individual final project, I had to reverse-engineer a real
+        object into a complete CAD assembly of at least 6 unique
+        components, including a dynamic (moving) element, and produce full
+        engineering drawings and an animation. I chose a manual coffee
+        grinder — I'd originally considered a brake caliper, but wanted a
+        subject I could actually purchase and physically measure myself,
+        rather than relying on estimated proportions or hard-to-find
+        reference drawings. No published drawings for this specific
+        grinder exist, so every dimension had to come from direct
+        measurement.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       One image: the physical grinder, whole, before teardown.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        Since there were no existing engineering drawings to reference, I
+        used calipers to measure every component directly from the
+        physical grinder. Where two parts connected or shared a dimension,
+        I reused the already-measured value rather than re-measuring, to
+        keep the parts consistent with each other. I started by modeling
+        the outer shell first, then built the remaining components around
+        it so everything would mate correctly in the final assembly.
+      </p>
+
+      <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/coffee-grinder/physical-grinder-before-teardown.jpg" alt="Physical grinder, before teardown">
+          <figcaption>Physical grinder, before teardown</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       Three parts: teardown photos, the fineness-adjustment mechanism
+       (explained with a CAD cutaway rather than a photo, since it's an
+       internal mechanism a photo can't show), then the full assembly
+       progression / exploded view.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        Some internal features couldn't be measured directly with
+        calipers, since I couldn't always reach inside the assembled
+        grinder. In those cases, I used engineering judgment to infer
+        reasonable dimensions based on how the parts needed to fit
+        together.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/coffee-grinder/handle-shaft-burrs.jpg" alt="Handle, shaft, and conical burrs">
+          <figcaption>Handle, shaft, and conical burrs</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/coffee-grinder/adjustment-mechanism-components.jpg" alt="Adjustment mechanism components">
+          <figcaption>Adjustment mechanism components</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The most challenging part to figure out was the fineness
+        adjustment mechanism: understanding how it actually worked
+        mechanically, then translating that into SolidWorks mates that
+        reproduced the same motion, took the most iteration of any part
+        of the model. Turning the adjustment ring doesn't move the ring
+        itself linearly — the ring's internal threads instead drive the
+        inner shaft up and down as it rotates. I modeled that with a
+        concentric mate for the ring's rotation and a screw mate to
+        couple that rotation to the inner shaft's linear travel, matching
+        the thread pitch I'd modeled. To keep the adjustment from
+        over-rotating past its physical limits, I added both a limit
+        angle mate and a limit distance mate, with the limits calculated
+        directly from the thread pitch rather than set arbitrarily.
+      </p>
+            <div class="media-grid media-grid--single">
+        <figure class="media-block">
+          <img src="images/coffee-grinder/cad-cutaway.jpg" alt="CAD cutaway section view">
+          <figcaption>CAD cutaway section view</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        With the mechanism worked out, the full assembly came together as
+        follows:
+      </p>
+      <!-- Add more figures here (copy this block) if the assembly
+           progression spans more than these two renders. -->
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/coffee-grinder/header-full-assembly.jpg" alt="Full assembly">
+          <figcaption>Full assembly</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/coffee-grinder/exploded-view.jpg" alt="Exploded view">
+          <figcaption>Exploded view</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY CHALLENGES
+       Text-only — no image.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Key Challenges</h3>
+      <p>
+        Measuring a fully assembled physical object without disassembling
+        it meant some dimensions had to be inferred rather than measured
+        directly — a few early guesses didn't make sense once I tried to
+        mate the parts together, so I had to revisit and correct them.
+        The fineness adjustment mechanism was the hardest part to
+        reverse-engineer: I was able to model its overall motion
+        successfully using mates, but I wasn't able to fully capture the
+        ball detent mechanism that gives the adjustment its "click"
+        positions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL OUTCOME
+       Two part drawings, then the final animation video.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Final Outcome</h3>
+      <p>
+        The final deliverable included a complete multi-part assembly, a
+        published assembly drawing with exploded view and BOM, part
+        drawings for select components, and an animation showing the
+        assembly sequence followed by the grinder's adjustment mechanism
+        in motion.
+      </p>
+
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/coffee-grinder/plastic-nut-drawing.png" alt="Part drawing — plastic nut">
+          <figcaption>Part drawing — plastic nut</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/coffee-grinder/shaft-drawing.png" alt="Part drawing — metal shaft">
+          <figcaption>Part drawing — metal shaft</figcaption>
+        </figure>
+      </div>
+
+      <div class="media-grid">
+        <figure class="media-block video-block">
+          <video controls src="images/coffee-grinder/animation.mp4"></video>
+          <figcaption>Final animation</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">Reverse engineering</span>
+        <span class="tag">Precision measurement</span>
+        <span class="tag">Assembly modeling</span>
+        <span class="tag">Mate/motion simulation</span>
+        <span class="tag">Engineering drawing creation (BOM, exploded views, balloons)</span>
+        <span class="tag">Independent problem-solving under measurement constraints</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>

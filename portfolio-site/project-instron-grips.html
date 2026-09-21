@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instron Grips — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. Edit that file to change colors/
+     fonts/spacing across the whole site at once. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page. "Projects" is marked
+       active here since this page lives under that section.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       Title / context / description / side image / tags.
+       This exact structure is reused, unchanged, on every project
+       page — only the text and image inside it change.
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: comes first, same position as the homepage headshot.
+           Replace the .placeholder div with
+           <img src="images/instron-grips/header.jpg" alt="Grips mounted with sample in place">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <img src="images/instron-grips/header-cad-assembly.png" alt="CAD assembly of the grip body">
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">Chiesa Research Group (Superconductivity Lab), Tufts University — Summer 2026 — Collaborative (with PhD student)</p>
+        <h1>Custom Instron Grips for Round-Sample Testing</h1>
+        <p class="description">
+          Custom grips designed and machined to enable round-sample mechanical testing
+          on the university's Instron, extending an existing test setup built only for
+          flat dog-bone samples.
+        </p>
+
+        <div class="tag-row" style="margin-bottom:8px;">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Lathe</span>
+          <span class="tag">Threading</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Deliverables</span>
+          <span class="tag">CAD Assembly</span>
+          <span class="tag">Engineering Drawing</span>
+          <span class="tag">Physical Grips</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       Text-only section — no .media-grid needed here.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        The university's Instron test setup only had grips built for flat dog-bone
+        samples, but an upcoming testing program required grips that could hold round
+        samples instead. Before that testing could begin, we needed to design, build,
+        and validate new grip hardware — practicing on surrogate materials (a carbon
+        fiber tube, aluminum rod, and corrugated metal tube) rather than the actual
+        test samples.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       Two images in this section — see the two .media-block
+       elements inside the .media-grid below.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        The PhD student had designed the V-bend geometry that would contact and grip
+        the round samples, and tasked me with figuring out how to make the rest of
+        the system work — designing the grip body, supporting the grippers, and
+        making it compatible with the university's Instron, which only had grips
+        built for flat dog-bone samples. I designed a C-frame body, open on one side
+        so a sample can pass through, which meant the grippers couldn't be supported
+        from underneath. I added two steel rods spanning through both sides of the
+        frame and through both grippers to support them structurally. For the two
+        attachments connecting the grip body to the Instron's pin fixture, I found an
+        existing steel piece in the shop's scrap stock that just needed re-threading,
+        and machined the second attachment from scratch out of aluminum.
+      </p>
+
+      <!-- IMAGE BLOCK: copy/paste the .media-block div to add more images.
+           Replace each .placeholder with an <img src="..." alt="..."> tag. -->
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/instron-grips/measuring-existing-attachment.jpg" alt="Measuring the existing Instron steel attachment">
+          <figcaption>Measuring the existing Instron steel attachment</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/cframe-engineering-drawing.png" alt="C-frame engineering drawing">
+          <figcaption>C-frame engineering drawing</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       This is the "full build story" section — it can run long
+       and have several image groups. Each paragraph below has its
+       own .media-grid right after it, matching the write-up.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        The main grip body, which holds and positions the parts that actually contact
+        the sample, was machined by the PhD student. My work focused on the two
+        attachments that connect that body to the Instron's pin fixture, one per
+        side. One started as an existing steel piece I found in the machine shop's
+        stock. I turned down its original threads and re-cut new ones to interface
+        with my grip body. The other I machined entirely from scratch out of
+        aluminum. I also cut the threads joining each attachment to the body,
+        threaded the interface for the lead screw (the lead screw itself was an
+        off-the-shelf part), and machined the steel support rods.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/instron-grips/grip-body-before-attachments.jpg" alt="Main grip body before attachments">
+          <figcaption>Main grip body before attachments</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/threading-attachment-leadscrew.jpg" alt="Threading the attachment/lead screw interfaces">
+          <figcaption>Threading the attachment/lead screw interfaces</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The rods started as steel rod stock, but machining them on a standard lathe
+        setup meant turning one side, then flipping the stock to do the other. This
+        introduced small diameter inaccuracies where the two sides met. To fix this,
+        I turned them between centers instead, machining the entire rod in a single
+        continuous setup for a consistent diameter along its full length.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/instron-grips/aluminum-stock-next-to-attachment.jpg" alt="Aluminum stock next to steel attachment with new threads">
+          <figcaption>Aluminum stock next to steel attachment with new threads</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/incremental-manufacturing-progress.jpg" alt="Incremental manufacturing progress">
+          <figcaption>Incremental manufacturing progress</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/turning-between-centers.jpg" alt="Turning between centers">
+          <figcaption>Turning between centers</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The first iteration used aluminum V-bend pieces (reinforced with a steel
+        backing plate) as the sample-contact surface.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <img src="images/instron-grips/aluminum-vbend-with-backing-plate.jpg" alt="Aluminum V-bend grips with steel backing plate">
+          <figcaption>Aluminum V-bend grips with steel backing plate</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/final-assembled-grips.jpg" alt="Final assembled grips">
+          <figcaption>Final assembled grips</figcaption>
+        </figure>
+        <figure class="media-block">
+          <img src="images/instron-grips/grips-mounted-carbon-fiber-sample.jpg" alt="Grips mounted with a carbon fiber tube sample between them">
+          <figcaption>Grips mounted with a carbon fiber tube sample between them</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY CHALLENGES
+       For this project, Key Challenges closes out the story, so
+       there's no separate Final Outcome section below — that's
+       expected and matches the brief (some projects merge the two,
+       others omit Final Outcome). To add a Final Outcome section on
+       a different project, just copy this whole <section> block,
+       rename the heading, and swap the text.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Key Challenges</h3>
+      <p>
+        The aluminum V-bend contact surfaces didn't grip the round samples firmly
+        enough, causing slipping during testing. This is problematic, since the whole
+        point of this phase was validating the video extensometer and temperature
+        chamber setup, which required the sample to stay securely in place. To fix
+        this, the PhD student redesigned the sample-contact pieces as fully round,
+        solid-steel components, better matched to the round sample geometry. This
+        final version gripped securely with no slipping. These grips served their
+        purpose as a first-pass validation step for the lab's testing setup.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block media-block--small">
+          <img src="images/instron-grips/redesigned-steel-round-grips.jpg" alt="Redesigned steel round-contact grips">
+          <figcaption>Redesigned steel round-contact grips</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       Short phrase list, styled as tags — same last section on
+       every project page, right before the footer.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">Fixture/tooling design</span>
+        <span class="tag">Precision measurement</span>
+        <span class="tag">Lathe work (threading, turning between centers)</span>
+        <span class="tag">Collaborative design with a graduate researcher</span>
+        <span class="tag">Interfacing with existing hardware</span>
+        <span class="tag">Resourceful use of available materials</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>
