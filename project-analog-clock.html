@@ -128,8 +128,12 @@
       </p>
       <div class="media-grid">
         <figure class="media-block">
-          <div class="placeholder">CAD render of one digit module (front and side views)</div>
-          <figcaption>CAD render of one digit module, front and side views</figcaption>
+          <div class="placeholder">CAD render, front view</div>
+          <figcaption>CAD render of one digit module, front view</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">CAD render, side view</div>
+          <figcaption>CAD render of one digit module, side view</figcaption>
         </figure>
       </div>
 
@@ -145,7 +149,7 @@
           <div class="placeholder">test fits</div>
           <figcaption>Test fits</figcaption>
         </figure>
-        <figure class="media-block video-block">
+        <figure class="media-block">
           <div class="placeholder">inverse cam pair video</div>
           <figcaption>Inverse cam pair in motion</figcaption>
         </figure>
@@ -185,11 +189,32 @@
       </div>
 
       <p>
-        I wrote the code in stages. First, a serial monitor test where I type a digit
-        and the motor moves to it, which let me calibrate how many steps one digit
-        takes. Then I wrote the full clock program. At startup I turn all four digits
-        to 0 by hand and type the current time into the serial monitor as four digits.
-        Once the fourth digit arrives, it moves every display to that time and starts
+        I wrote the code in stages. First, I wrote a quick program that turns the
+        motor continuously, to make sure I could get a motor to turn at all.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">continuous motor turning video</div>
+          <figcaption>Motor turning continuously</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Next, I wrote a serial monitor test where I type a digit and the motor moves
+        to it. This confirmed I could get the digits to change, and let me calibrate
+        how many steps one digit takes.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">serial monitor test video</div>
+          <figcaption>Typing a number and the display moving to it</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Then I wrote the full clock program. At startup I turn all four digits to 0 by
+        hand and type the current time into the serial monitor as four digits. Once
+        the fourth digit arrives, it moves every display to that time and starts
         counting. Each minute it works out the four digits for the new time and
         advances whichever displays changed. The motors only turn one way, so a digit
         that wraps from 9 back to 0 turns forward through the rest of the cycle. The
@@ -199,16 +224,12 @@
       </p>
       <div class="media-grid">
         <figure class="media-block">
-          <div class="placeholder">code excerpt</div>
-          <figcaption>Code excerpt</figcaption>
-        </figure>
-        <figure class="media-block video-block">
-          <div class="placeholder">serial typing video</div>
-          <figcaption>Typing a number and the display moving to it</figcaption>
-        </figure>
-        <figure class="media-block video-block">
           <div class="placeholder">clock running video</div>
           <figcaption>The clock running through all the digits</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">code excerpt</div>
+          <figcaption>Code excerpt</figcaption>
         </figure>
       </div>
     </div>
