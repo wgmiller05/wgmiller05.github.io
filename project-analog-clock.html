@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanical Analog Seven-Segment Clock — William Miller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Shared styling — see styles.css. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV BAR — identical on every page.
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="wrap">
+      <a class="name" href="index.html">William Miller</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PROJECT HEADER BLOCK
+       ============================================================ -->
+  <section class="project-header">
+    <div class="wrap project-header-grid">
+
+      <!-- SIDE IMAGE: replace the .placeholder div with
+           <img src="images/analog-clock/header.jpg" alt="Finished mechanical clock">
+           kept inside .side-box. -->
+      <div class="side-box">
+        <div class="placeholder">finished clock hero shot</div>
+      </div>
+
+      <div class="header-text">
+        <p class="eyebrow">Personal Project — 2026</p>
+        <h1>Fully Mechanical Analog Seven-Segment Clock</h1>
+        <p class="description">
+          A four-digit clock with no screen or LEDs, where each digit is a purely
+          mechanical display driven by one central shaft turning through 10 positions.
+        </p>
+
+        <div class="tag-row" style="margin-bottom:8px;">
+          <span class="tag-label">Tools</span>
+          <span class="tag">SolidWorks</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">Arduino Uno</span>
+          <span class="tag">PlatformIO (C++)</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Deliverables</span>
+          <span class="tag">CAD Assembly</span>
+          <span class="tag">Physical Prototype</span>
+          <span class="tag">Firmware</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECT OVERVIEW
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Project Overview</h3>
+      <p>
+        I wanted to build a clock with no screen or LEDs, where every digit is a purely mechanical display. Each digit is driven by the rotation of one central shaft, which turns through 10 positions, one for each number from 0 to 9. Four of these displays together make a clock, with stepper motors turning the shafts automatically.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGINEERING APPROACH
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Engineering Approach</h3>
+      <p>
+        Each digit combines three mechanisms. A spur gear train carries the stepper motor's rotation to the central shaft. Stacked up that shaft are inverse cam pairs, which turn the shaft's rotation into linear motion of each segment's rack. Each rack drives a pinion, and the pinion flips that segment's panel into view or out of view. As the shaft moves through its 10 positions, the cams push each rack to the right place, so the panels together form every digit from 0 to 9. In total the clock has about 39 unique parts, and every one of them is designed to be 3D printed.
+      </p>
+      <p>
+        I chose stepper motors over servos because of how the mechanism moves. A standard servo only sweeps about 180°, so it can't turn the shaft through repeated full rotations. A continuous rotation servo can spin freely, but it has no position control, so I'd be guessing how far it turned. A stepper moves in exact increments and can keep turning in one direction indefinitely, which is what a shaft that advances one digit at a time needs. Mechanical detents also hold each position, so the motor only has to move the mechanism and doesn't have to hold it.
+      </p>
+      <p>
+              <div class="media-grid media-grid--large">
+        <figure class="media-block">
+          <div class="placeholder">cams and racks (close-up)</div>
+          <figcaption>Cams and racks</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">pinions and panels (close-up)</div>
+          <figcaption>Pinions and panels</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">spur gear train (close-up)</div>
+          <figcaption>Spur gear train</figcaption>
+        </figure>
+      </div>
+
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESIGN ITERATION
+       Several paragraphs, each followed by its own image/video group.
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Design Iteration</h3>
+
+      <p>
+        The CAD was the hardest part of the project. I had to work out how each
+        mechanism functions and how all of them fit together, while keeping each
+        digit compact enough to stack seven inverse cam pairs and rack and pinion
+        sets on one shaft. I built the assembly in SolidWorks with mates for each
+        moving joint, so I could check the motion before printing anything.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">CAD render of one digit module (front and side views)</div>
+          <figcaption>CAD render of one digit module, front and side views</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Before printing the full clock, I printed test pieces to find the right
+        tolerances, since everything is 3D printed and the clearances decide whether
+        the clock works at all. Circular press fits worked with 0.2 mm of total
+        clearance. Spinning shafts got 0.3 mm total. For the prismatic joints, a
+        7 mm by 7 mm part slides in a hole that is 7.6 mm wide and 7.4 mm tall.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">test fits</div>
+          <figcaption>Test fits</figcaption>
+        </figure>
+        <figure class="media-block video-block">
+          <div class="placeholder">inverse cam pair video</div>
+          <figcaption>Inverse cam pair in motion</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        For assembly, I printed all the parts and laid them out for one module before
+        putting anything together. I assembled each digit and turned the shaft by hand
+        to check that it clicked through all 10 positions.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">all parts laid out</div>
+          <figcaption>All parts laid out for one module</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">turning the shaft by hand</div>
+          <figcaption>Turning the shaft by hand</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        The electronics are an Arduino Uno controlling four 28BYJ-48 stepper motors
+        through ULN2003 driver boards. The Uno browned out when I tried to power all
+        the motors from it, so I added a separate 5V supply on a breadboard to
+        distribute power to the drivers, with a shared ground back to the Uno.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">wiring photo</div>
+          <figcaption>Wiring</figcaption>
+        </figure>
+        <figure class="media-block">
+          <div class="placeholder">circuit block diagram</div>
+          <figcaption>Circuit block diagram</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        I wrote the code in stages. First, a serial monitor test where I type a digit
+        and the motor moves to it, which let me calibrate how many steps one digit
+        takes. Then I wrote the full clock program. At startup I turn all four digits
+        to 0 by hand and type the current time into the serial monitor as four digits.
+        Once the fourth digit arrives, it moves every display to that time and starts
+        counting. Each minute it works out the four digits for the new time and
+        advances whichever displays changed. The motors only turn one way, so a digit
+        that wraps from 9 back to 0 turns forward through the rest of the cycle. The
+        minute count runs on its own timer instead of waiting for the motors to stop,
+        since each move takes a few seconds, so the clock doesn't drift while the
+        motors are moving.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">code excerpt</div>
+          <figcaption>Code excerpt</figcaption>
+        </figure>
+        <figure class="media-block video-block">
+          <div class="placeholder">serial typing video</div>
+          <figcaption>Typing a number and the display moving to it</figcaption>
+        </figure>
+        <figure class="media-block video-block">
+          <div class="placeholder">clock running video</div>
+          <figcaption>The clock running through all the digits</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KEY CHALLENGES
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Key Challenges</h3>
+      <p>
+        The biggest challenge was tolerance stack-up. I had set the clearances for each
+        part but hadn't accounted for them adding up as the cam pairs stacked up the
+        shaft. The first four pairs aligned fine, but past that point the accumulated
+        error was too much and the upper cam pairs stopped working. To fix it, I made
+        the fifth cam from the bottom slightly shorter, which reset the stack for the
+        three pairs above it. That meant reprinting only four parts in total, one for
+        each digit.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">cam stack</div>
+          <figcaption>The cam stack</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        A smaller problem came from the motor mount. The gear on the motor hit the
+        heads of the mounting bolts, so I raised it 1.5 to 2 mm on the shaft. It stayed
+        firmly seated with no wobble, but raising it meant the idler gear had to move
+        up by the same amount to stay in mesh. I fixed that by redesigning the motor
+        mounts to hold the idler higher.
+      </p>
+      <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">gear train close-up</div>
+          <figcaption>Gear train with the raised motor gear and idler</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL OUTCOME
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Final Outcome</h3>
+      <p>
+        I built a working mechanical clock whose digits advance on their own. It runs a little noisy, but it's a great display to watch. The deliverables are the full CAD assembly, the physical prototype, and the firmware that runs it.
+      </p>
+      <p>
+              <div class="media-grid">
+        <figure class="media-block">
+          <div class="placeholder">finished clock (ideally a digit advancing)</div>
+          <figcaption>Finished clock</figcaption>
+        </figure>
+      </div>
+
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS DEMONSTRATED
+       ============================================================ -->
+  <section class="project-section">
+    <div class="wrap">
+      <h3>Skills Demonstrated</h3>
+      <div class="skills-list">
+        <span class="tag">Mechanism design (cams, gear trains, rack and pinion)</span>
+        <span class="tag">Design for 3D printing</span>
+        <span class="tag">Tolerance analysis and stack-up</span>
+        <span class="tag">SolidWorks assemblies and mates</span>
+        <span class="tag">Motor control and embedded programming</span>
+        <span class="tag">Power distribution and debugging</span>
+        <span class="tag">Iterative prototyping</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER — identical on every page.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--slate);">&copy; 2026 William Miller</span>
+      <div class="footer-links">
+        <a href="mailto:williamgeoffreymiller@gmail.com">williamgeoffreymiller@gmail.com</a>
+        <a href="https://www.linkedin.com/in/wgmiller" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared site behavior (currently: click-to-enlarge on photos). -->
+  <script src="site.js"></script>
+
+</body>
+</html>
